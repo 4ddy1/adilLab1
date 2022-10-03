@@ -42,18 +42,16 @@ fun Node.sayHello() {
   }
 }
 
-
-
 fun celToFar(e: Event): Unit {
-  var cel = document.getElementById("cel") as HTMLInputElement
-  var far = document.getElementById("far") as HTMLInputElement
+  val cel = document.getElementById("cel") as HTMLInputElement
+  val far = document.getElementById("far") as HTMLInputElement
 
   far.value = ((9.0 / 5.0 * cel.value.toDouble()) + 32).toString()
 }
 
 fun farToCel(e: Event): Unit {
-  var cel = document.getElementById("cel") as HTMLInputElement
-  var far = document.getElementById("far") as HTMLInputElement
+  val cel = document.getElementById("cel") as HTMLInputElement
+  val far = document.getElementById("far") as HTMLInputElement
 
   cel.value = (5.0 / 9.0 * (far.value.toDouble() - 32)).toString()
 }
