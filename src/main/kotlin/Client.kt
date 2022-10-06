@@ -1,6 +1,7 @@
 
 import kotlinx.browser.document
 import kotlinx.browser.window
+import kotlinx.html.InputType
 import kotlinx.html.button
 import kotlinx.html.dom.append
 import kotlinx.html.id
@@ -21,14 +22,14 @@ fun Node.sayHello() {
           input {
             id = "cel"
             placeholder = "enter cel"
-            //type = InputType.number
+            type = InputType.number
           }
       }
       div {
           input {
             id = "far"
             placeholder = "enter far"
-            //type = InputType.number
+            type = InputType.number
           }
       }
       div {
@@ -57,3 +58,4 @@ fun farToCel(e: Event): Unit {
 
   cel.value = (5.0 / 9.0 * (far.value.toDouble() - 32)).toString()
 }
+
