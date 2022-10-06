@@ -1,8 +1,10 @@
 
 import kotlinx.browser.document
 import kotlinx.browser.window
-import kotlinx.html.*
+import kotlinx.html.button
 import kotlinx.html.dom.append
+import kotlinx.html.id
+import kotlinx.html.input
 import kotlinx.html.js.div
 import kotlinx.html.js.onClickFunction
 import org.w3c.dom.HTMLInputElement
@@ -16,20 +18,20 @@ fun main() {
 fun Node.sayHello() {
   append {
       div {
-        input {
-          id = "cel"
-          placeholder = "enter cel"
-          type = InputType.number
-        }
+          input {
+            id = "cel"
+            placeholder = "enter cel"
+            //type = InputType.number
+          }
       }
       div {
-        input {
-          id = "far"
-          placeholder = "enter far"
-          type = InputType.number
-        }
+          input {
+            id = "far"
+            placeholder = "enter far"
+            //type = InputType.number
+          }
       }
-      form {
+      div {
         button {
           +"cel To Far"
           onClickFunction = ::celToFar
