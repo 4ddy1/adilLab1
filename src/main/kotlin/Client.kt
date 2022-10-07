@@ -23,6 +23,8 @@ fun Node.sayHello() {
             id = "cel"
             placeholder = "enter cel"
             type = InputType.number
+            val x = ""
+            value = x
           }
       }
       div {
@@ -30,6 +32,8 @@ fun Node.sayHello() {
             id = "far"
             placeholder = "enter far"
             type = InputType.number
+            val y = ""
+            value = y
           }
       }
       div {
@@ -41,21 +45,41 @@ fun Node.sayHello() {
           +"far To Cel"
           onClickFunction = ::farToCel
         }
+        button {
+          +"clear"
+          onClickFunction = ::clearFun
+        }
       }
   }
 }
 
-fun celToFar(e: Event): Unit {
+class degree(){
   val cel = document.getElementById("cel") as HTMLInputElement
   val far = document.getElementById("far") as HTMLInputElement
-
-  far.value = ((9.0 / 5.0 * cel.value.toDouble()) + 32).toString()
 }
 
-fun farToCel(e: Event): Unit {
-  val cel = document.getElementById("cel") as HTMLInputElement
-  val far = document.getElementById("far") as HTMLInputElement
+  fun celToFar(e: Event): Unit {
+    val a = degree()
+    val cel = a.cel
+    val far = a.far
+    far.value = ((9.0 / 5.0 * cel.value.toDouble()) + 32).toString()
+  }
 
-  cel.value = (5.0 / 9.0 * (far.value.toDouble() - 32)).toString()
-}
+  fun farToCel(e: Event): Unit {
+    val a = degree()
+    val cel = a.cel
+    val far = a.far
+    cel.value = (5.0 / 9.0 * (far.value.toDouble() - 32)).toString()
+  }
+
+  fun clearFun(e: Event):Unit{
+    val a = degree()
+    val cel = a.cel
+    val far = a.far
+    cel.value = ""
+    far.value = ""
+  }
+
+
+
 
